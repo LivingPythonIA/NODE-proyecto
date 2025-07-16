@@ -1,23 +1,23 @@
 {
-  "name": "techlab-store-api",
+  "name": "proyecto-final-ecommerce-Miriam-Belza",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "description": "proyecto NODE",
+  "description": "Proyecto final del curso de Node.js: API REST para e-commerce con Firebase",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LivingPythonIA/NODE-proyecto.git"
+    "url": "git+https://github.com/LivingPythonIA/proyecto-final-ecommerce-Miriam-Belza.git"
   },
   "author": "Miriam Belza",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LivingPythonIA/NODE-proyecto/issues"
+    "url": "https://github.com/LivingPythonIA/proyecto-final-ecommerce-Miriam-Belza/issues"
   },
-  "homepage": "https://github.com/LivingPythonIA/NODE-proyecto#readme",
+  "homepage": "https://github.com/LivingPythonIA/proyecto-final-ecommerce-Miriam-Belza#readme",
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
@@ -30,3 +30,4 @@
     "nodemon": "^3.1.10"
   }
 }
+
