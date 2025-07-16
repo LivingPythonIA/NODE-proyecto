@@ -12,9 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/LivingPythonIA/NODE-proyecto.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Miriam Belza",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/LivingPythonIA/NODE-proyecto/issues"
   },
