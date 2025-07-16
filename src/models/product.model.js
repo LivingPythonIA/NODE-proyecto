@@ -4,7 +4,8 @@ import {
   getDoc,
   getDocs,
   addDoc,
-  deleteDoc
+  deleteDoc,
+  updateDoc
 } from 'firebase/firestore';
 import { db } from '../config/firebase.js';
 
@@ -47,4 +48,18 @@ try {
 export const remove = async id => {
   const ref = doc(PRODUCTS, id);
   await deleteDoc(ref);
+};
+
+export const update = async (id, data) => {
+  const ref = doc(PRODUCTS, id);
+  const snap = await getDoc(ref);
+  if (!snap.exists()) return null;
+
+  const updated = {
+    name: data.name,
+    price: Number(data.price)
+  };
+
+  await updateDoc(ref, updated);
+  return { id, ...updated };
 };

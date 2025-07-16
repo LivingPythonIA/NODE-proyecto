@@ -40,3 +40,13 @@ export const remove = async (req, res, next) => {
     res.status(204).end();
   } catch (err) { next(err); }
 };
+
+export const update = async (req, res, next) => {
+  try {
+    const updated = await productService.updateProduct(req.params.id, req.body);
+    if (!updated) return res.status(404).json({ message: 'Producto no encontrado' });
+    res.json(updated);
+  } catch (err) {
+    next(err);
+  }
+};

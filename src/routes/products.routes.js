@@ -9,6 +9,7 @@ router.get('/', ctrl.getAll);
 router.get('/:id', ctrl.getOne);
 router.post('/create', protect, ctrl.create);   // protegida
 router.delete('/:id', protect, ctrl.remove);    // protegida
+router.put('/api/products/:id', verifyToken, productController.update);
 
 export default router;
 
