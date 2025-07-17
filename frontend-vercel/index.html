@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productos TechLab</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; background: #f9f9f9; }
+    h1 { color: #333; }
+    .product { border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; background: #fff; border-radius: 5px; }
+    .price { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Catálogo de Productos</h1>
+  <div id="products">Cargando productos...</div>
+
+  <script>
+    const apiUrl = 'https://proyecto-final-ecommerce-miriam-belza.onrender.com/api/products';
+
+    async function cargarProductos() {
+      try {
+        const res = await fetch(apiUrl);
+        const data = await res.json();
+
+        const contenedor = document.getElementById('products');
+        contenedor.innerHTML = '';
+
+        data.forEach(prod => {
+          const item = document.createElement('div');
+          item.className = 'product';
+          item.innerHTML = `
+            <strong>${prod.name}</strong>
+            <div class="price">💰 $${prod.price}</div>
+            <div><small>ID: ${prod.id}</small></div>
+          `;
+          contenedor.appendChild(item);
+        });
+      } catch (err) {
+        document.getElementById('products').innerHTML = '❌ Error al cargar los productos.';
+        console.error(err);
+      }
+    }
+
+    cargarProductos();
+  </script>
+</body>
+</html>
