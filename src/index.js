@@ -13,6 +13,8 @@ const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.send(' Bienvenidos a nuestra API de Node.js con Firebase!');
 });
+const PORT =3000;
+
 app.use(cors());
 app.use(bodyParser.json());
 
