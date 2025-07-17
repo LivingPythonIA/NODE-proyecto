@@ -21,7 +21,7 @@ API REST desarrollada en Node.js con Express y Firebase Firestore como base de d
 ## 🚀 Instalación
 
 ```bash
-git clone https://github.com/LivingPythonIA/NODE-proyecto.git
+git clone https://github.com/LivingPythonIA/proyecto-final-ecommerce-Miriam-Belza.git
 cd NODE-proyecto
 npm install
 
