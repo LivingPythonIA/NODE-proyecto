@@ -3,17 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Productos TechLab</title>
+  <title>Catálogo de Productos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; padding: 2rem; background: #f9f9f9; }
-    h1 { color: #333; }
-    .product { border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; background: #fff; border-radius: 5px; }
-    .price { color: #666; font-size: 0.9rem; }
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #f1f4f9;
+      color: #333;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .product {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: transform 0.2s ease;
+    }
+    .product:hover {
+      transform: translateY(-4px);
+    }
+    .product strong {
+      font-size: 1.2rem;
+      color: #111;
+    }
+    .price {
+      color: #007b8f;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .id {
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .coin {
+      margin-right: 6px;
+    }
   </style>
 </head>
 <body>
   <h1>Catálogo de Productos</h1>
-  <div id="products">Cargando productos...</div>
+  <div class="container" id="products">Cargando productos...</div>
 
   <script>
     const apiUrl = 'https://proyecto-final-ecommerce-miriam-belza.onrender.com/api/products';
@@ -31,8 +78,8 @@
           item.className = 'product';
           item.innerHTML = `
             <strong>${prod.name}</strong>
-            <div class="price">💰 $${prod.price}</div>
-            <div><small>ID: ${prod.id}</small></div>
+            <div class="price">🪙 $${prod.price}</div>
+            <div class="id">ID: ${prod.id}</div>
           `;
           contenedor.appendChild(item);
         });
